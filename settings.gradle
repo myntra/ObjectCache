@@ -1,1 +1,1 @@
-include ':Example'
+include ':objectcache', ':Example'
