@@ -14,19 +14,19 @@ DiskLruCache has been extended to support explicit eviction of entries based on 
 
 Add jitpack to your root `build.gradle`
 ```
-	allprojects {
-		repositories {
-			...
-			maven { url "https://jitpack.io" }
-		}
+allprojects {
+	repositories {
+		...
+		maven { url "https://jitpack.io" }
 	}
+}
 ```
 	
 Add the dependency
 ```
-	dependencies {
-	        compile 'com.github.myntra:ObjectCache:1.0.0'
-	}
+dependencies {
+        compile 'com.github.myntra:ObjectCache:1.0.0'
+}
 ```
 
 License
