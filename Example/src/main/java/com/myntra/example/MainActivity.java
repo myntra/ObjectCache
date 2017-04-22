@@ -1,4 +1,4 @@
-package com.myntra.objectcache;
+package com.myntra.example;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
