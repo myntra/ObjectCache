@@ -1,4 +1,7 @@
 # ObjectCache
+[![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
+[![Build Status](https://travis-ci.org/myntra/ObjectCache.svg?branch=master)](https://travis-ci.org/myntra/ObjectCache)
+[![Jitpack](https://jitpack.io/v/myntra/ObjectCache.svg)](https://jitpack.io/#myntra/ObjectCache)
 
 A simple means of storing `Objects` in Cache.
 
