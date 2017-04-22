@@ -25,7 +25,7 @@ allprojects {
 Add the dependency
 ```
 dependencies {
-        compile 'com.github.myntra:ObjectCache:1.0.0'
+	compile 'com.github.myntra:ObjectCache:1.0.0'
 }
 ```
 
