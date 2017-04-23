@@ -8,7 +8,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Example" />
             <option value="$PROJECT_DIR$/objectcache" />
           </set>
         </option>

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Example/Example.iml" filepath="$PROJECT_DIR$/Example/Example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ObjectCache.iml" filepath="$PROJECT_DIR$/ObjectCache.iml" />
-      <module fileurl="file://$PROJECT_DIR$/objectcache/objectcache.iml" filepath="$PROJECT_DIR$/objectcache/objectcache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ObjectCache.iml" filepath="$PROJECT_DIR$/.idea/modules/ObjectCache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/objectcache/objectcache.iml" filepath="$PROJECT_DIR$/.idea/modules/objectcache/objectcache.iml" />
     </modules>
   </component>
 </project>
