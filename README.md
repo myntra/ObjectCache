@@ -31,7 +31,7 @@ dependencies {
 
 ### Usage
 
-####Get Instance
+__Get Instance__
 Get an instance of ObjectCache. Pass in a `cacheDir` (`File`) a `folderName` (`String`) along with the `appVersion`.
 
 ```
@@ -42,18 +42,18 @@ or
 ObjectCache.defaultCache(cacheDir, appVersion);
 ```
 
-####Write
+__Write__
 ```
 ObjectCache.cacheInstance(cacheDir, folder, appVersion).write(key, object, expiry);
 ```
 
-####Fetch
+__Fetch__
 Will return null, if the object has expired
 ```
 ObjectCache.cacheInstance(cacheDir, folder, appVersion).fetch(key, Class.class);
 ```
 
-####Fetch Even if Expired
+__Fetch Even if Expired__
 ```
 ObjectCache.cacheInstance(cacheDir, folder, appVersion).fetchEvenIfExpired(key, Class.class);
 ```
