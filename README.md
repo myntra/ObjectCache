@@ -29,5 +29,34 @@ dependencies {
 }
 ```
 
+### Usage
+
+####Get Instance
+Get an instance of ObjectCache. Pass in a `cacheDir` (`File`) a `folderName` (`String`) along with the `appVersion`.
+
+```
+ObjectCache.cacheInstance(cacheDir, folder, appVersion);
+
+or
+
+ObjectCache.defaultCache(cacheDir, appVersion);
+```
+
+####Write
+```
+ObjectCache.cacheInstance(cacheDir, folder, appVersion).write(key, object, expiry);
+```
+
+####Fetch
+Will return null, if the object has expired
+```
+ObjectCache.cacheInstance(cacheDir, folder, appVersion).fetch(key, Class.class);
+```
+
+####Fetch Even if Expired
+```
+ObjectCache.cacheInstance(cacheDir, folder, appVersion).fetchEvenIfExpired(key, Class.class);
+```
+
 ## License
 ObjectCache is available under the MIT license. See the LICENSE file for more info.
