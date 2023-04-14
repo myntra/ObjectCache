@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.myntra.objectcache.BuildConfig;
-
 /**
  * @author mario
  */
@@ -25,6 +23,8 @@ public class ObjectCache {
     static final String STRING_KEY_PATTERN = "[a-z0-9_-]{1,120}";
     public static final Pattern LEGAL_KEY_PATTERN = Pattern.compile(STRING_KEY_PATTERN);
 
+    private static boolean debugMode = false;
+
     public static ObjectCache defaultCache(File cacheDir, int appVersion) {
         return cacheInstance(cacheDir, DEFAULT_CACHE_DIR, appVersion);
     }
@@ -35,7 +35,7 @@ public class ObjectCache {
         try {
             objectCache.cache = DiskLruCache.open(file, appVersion, 1, SIZE);
         } catch (IOException e) {
-            if(BuildConfig.DEBUG)
+            if(debugMode)
                 e.printStackTrace();
         }
         return objectCache;
@@ -47,10 +47,14 @@ public class ObjectCache {
         try {
             objectCache.cache = DiskLruCache.open(file, appVersion, 1, size);
         } catch (IOException e) {
-            if(BuildConfig.DEBUG)
+            if(debugMode)
                 e.printStackTrace();
         }
         return objectCache;
+    }
+
+    public static void setDebugBuild(boolean mode) {
+        debugMode = mode;
     }
 
     public void write(String key, Object object, long expiry) {
@@ -63,7 +67,7 @@ public class ObjectCache {
             cache.flush();
             editor.commit();
         } catch (IOException e) {
-            if(BuildConfig.DEBUG)
+            if(debugMode)
                 e.printStackTrace();
         }
     }
@@ -85,7 +89,7 @@ public class ObjectCache {
                 }
             }
         } catch (Exception e) {
-            if(BuildConfig.DEBUG)
+            if(debugMode)
                 e.printStackTrace();
         }
         return null;
@@ -101,7 +105,7 @@ public class ObjectCache {
                 return gson.fromJson(entryJson.getAsJsonObject(Entry.VALUE), classOfT);
             }
         } catch (IOException e) {
-            if(BuildConfig.DEBUG)
+            if(debugMode)
                 e.printStackTrace();
         }
         return null;
@@ -117,7 +121,7 @@ public class ObjectCache {
                 return entry.hasExpired();
             }
         } catch (IOException e) {
-            if(BuildConfig.DEBUG)
+            if(debugMode)
                 e.printStackTrace();
         }
         return null;
@@ -128,7 +132,7 @@ public class ObjectCache {
         try {
             return cache.remove(key);
         } catch (IOException e) {
-            if(BuildConfig.DEBUG)
+            if(debugMode)
                 e.printStackTrace();
         }
         return false;
