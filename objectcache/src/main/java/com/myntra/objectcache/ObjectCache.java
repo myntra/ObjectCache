@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.myntra.objectcache.BuildConfig;
+
 /**
  * @author mario
  */
@@ -33,7 +35,8 @@ public class ObjectCache {
         try {
             objectCache.cache = DiskLruCache.open(file, appVersion, 1, SIZE);
         } catch (IOException e) {
-            e.printStackTrace();
+            if(BuildConfig.DEBUG)
+                e.printStackTrace();
         }
         return objectCache;
     }
@@ -44,7 +47,8 @@ public class ObjectCache {
         try {
             objectCache.cache = DiskLruCache.open(file, appVersion, 1, size);
         } catch (IOException e) {
-            e.printStackTrace();
+            if(BuildConfig.DEBUG)
+                e.printStackTrace();
         }
         return objectCache;
     }
@@ -59,7 +63,8 @@ public class ObjectCache {
             cache.flush();
             editor.commit();
         } catch (IOException e) {
-            e.printStackTrace();
+            if(BuildConfig.DEBUG)
+                e.printStackTrace();
         }
     }
 
@@ -80,7 +85,8 @@ public class ObjectCache {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            if(BuildConfig.DEBUG)
+                e.printStackTrace();
         }
         return null;
     }
@@ -95,7 +101,8 @@ public class ObjectCache {
                 return gson.fromJson(entryJson.getAsJsonObject(Entry.VALUE), classOfT);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            if(BuildConfig.DEBUG)
+                e.printStackTrace();
         }
         return null;
     }
@@ -110,7 +117,8 @@ public class ObjectCache {
                 return entry.hasExpired();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            if(BuildConfig.DEBUG)
+                e.printStackTrace();
         }
         return null;
     }
@@ -120,7 +128,8 @@ public class ObjectCache {
         try {
             return cache.remove(key);
         } catch (IOException e) {
-            e.printStackTrace();
+            if(BuildConfig.DEBUG)
+                e.printStackTrace();
         }
         return false;
     }
